@@ -12,6 +12,7 @@ class ProjectController {
 
     async getProjectbyUser(req, res) {
         const id = req.query.id
+        console.log(req)
         const projects = await db.query(`select * from project where ID_DEP_CLIENT = $1`, [id])
         res.json(projects.rows)
     }
